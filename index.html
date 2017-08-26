@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js使用 「v-for」抓出陣列資料</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  
+<div id="app">
+  <h1>Vue.js使用 「v-for」抓出陣列資料</h1>
+  <h3>最簡單的陣列清單 v-for="項目 in 陣列"</h3>
+  <ul>
+    <li v-for="fruit in shoplist">{{fruit}}</li>
+  </ul>
+  <h3>陣列</h3>
+  <ul>
+    <li v-for="(id,item) in shoplist2"> 
+      <div class="name">{{id+1}}.{{item.name}}:</div>
+      <div class="price">${{item.price}}</div>
+    </li>
+  </ul>
+  <h3>在商品物件中放生產國家清單，使用第二層v-for</h3>
+  <ul>
+    <li v-for="(id,item) in shoplist3">
+      <div>{{id+1}}</div>
+      <div class="name">名稱:</div>
+      <div class="price">{{item.name}}</div><br/>
+      <div class="name">價錢：</div>
+      <div class="price">{{item.price}}</div><br/>
+      <div class="name">生產國家：</div><span v-for="country in item.produce">{{country}}/</span>
+    </li>
+  </ul>
+</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

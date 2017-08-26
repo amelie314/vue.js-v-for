@@ -1,0 +1,22 @@
+#app
+  h1 Vue.js使用 「v-for」抓出陣列資料
+  h3 最簡單的陣列清單 v-for="項目 in 陣列"
+  ul
+    li(v-for="fruit in shoplist") {{fruit}}
+  h3 陣列
+  ul
+    li(v-for="(id,item) in shoplist2") 
+      .name {{id+1}}.{{item.name}}:
+      .price ${{item.price}}
+  h3 在商品物件中放生產國家清單，使用第二層v-for
+  ul
+    li(v-for="(id,item) in shoplist3")
+      div {{id+1}}
+      .name 名稱:
+      .price {{item.name}}
+      br
+      .name 價錢：
+      .price {{item.price}}
+      br
+      .name 生產國家：
+      span(v-for="country in item.produce") {{country}}/
